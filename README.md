@@ -32,10 +32,13 @@ Download the zip, extract the files, open terminal / cmd, use the cd command to 
 ```sh
 cd src
 ```
-now type:
+now to run the server type:
 ```sh
 java -jar Ex4_Server_v0.0.jar 11
 (11 represents the case we are running, could be any number between 0-15)
-
+```
+now run our main program:
+```sh
+python main.py
 ```
 
