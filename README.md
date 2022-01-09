@@ -28,17 +28,19 @@ The game is about agents catching as many pokemons as possible, agents are "runn
 
 ## How to Run:
 
-Download the zip, extract the files, open terminal / cmd, use the cd command to change directory to src folder:
+Option 1:
+Download the code, extract the files, use the cd command in terminal to change directory to src folder:
 ```sh
 cd src
 ```
-now to run the server type:
+now to run the server, type in terminal:
 ```sh
 java -jar Ex4_Server_v0.0.jar 11
 (11 represents the case we are running, could be any number between 0-15)
 ```
-now run our main program:
-```sh
-python main.py
-```
+finally, run "main.py"
+
+Option 2:
+Download the release version, extract the files, open two command prompts and follow the screenshot:
+![image](https://cdn.discordapp.com/attachments/782613357790363689/929833090669494322/unknown.png)
 
