@@ -24,7 +24,7 @@ The game is about agents catching as many pokemons as possible, agents are "runn
 
 
 ## UML
-![uml](https://i.imgur.com/51xr2pf.png)
+![uml](https://i.imgur.com/Gcr4XoE.png)
 
 ## How to Run:
 
