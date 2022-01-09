@@ -1,11 +1,12 @@
 import json
+import sys
 
 import pygame
 
 from GraphAlgo import GraphAlgo
 from client import Client
 from game import Game
-from src.gui import GUI
+from gui import GUI
 
 INIT = 0
 ON_WAY = 1
@@ -20,7 +21,7 @@ def start_client():
     return server_client
 
 
-def load_graph_and_algo():
+def load_graph_and_algo(client: Client):
     graph_json = client.get_graph()
     json_obj = json.loads(graph_json)
     with open('curr_graph', 'w') as f:
@@ -30,9 +31,9 @@ def load_graph_and_algo():
     return graph_algo
 
 
-if __name__ == '__main__':
+def run_game():
     client = start_client()
-    Algo = load_graph_and_algo()
+    Algo = load_graph_and_algo(client)
 
     total_moves = 0
 
@@ -86,3 +87,7 @@ if __name__ == '__main__':
 
         pygame.display.update()
         # time.sleep(0.01)
+
+
+if __name__ == '__main__':
+    run_game()

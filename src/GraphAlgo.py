@@ -3,8 +3,12 @@ import traceback
 from typing import List
 import pygame
 from pygame import gfxdraw
-from src.GraphAlgoInterface import GraphAlgoInterface
-from src.DiGraph import *
+from GraphAlgoInterface import GraphAlgoInterface
+from GraphInterface import GraphInterface
+from DiGraph import DiGraph
+from mynode import MyNode
+import math
+import random
 
 Black = (0, 0, 0)
 White = (255, 255, 255)
@@ -267,4 +271,3 @@ class GraphAlgo(GraphAlgoInterface):
         x = (((coordinates[0] - self.graph.min_x) * wide_factor) * 0.65) + 150
         y = (((coordinates[1] - self.graph.min_y) * height_factor) * 0.65) + 100
         return x, y
-

@@ -5,11 +5,11 @@ import pygame
 from pygame import *
 from pygame import gfxdraw
 
-from src import GraphAlgo
-from src.agent import Agent
-from src.client import Client
-from src.game import Game
-from src.pokemon import Pokemon
+from GraphAlgo import GraphAlgo
+from agent import Agent
+from client import Client
+from game import Game
+from pokemon import Pokemon
 
 
 class GUI:

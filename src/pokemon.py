@@ -1,4 +1,4 @@
-from src.mynode import MyNode
+from mynode import MyNode
 
 
 class Pokemon:

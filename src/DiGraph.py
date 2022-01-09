@@ -1,8 +1,8 @@
 import math
 import random
 
-from src.mynode import MyNode
-from src.GraphInterface import GraphInterface
+from mynode import MyNode
+from GraphInterface import GraphInterface
 Max_Value = math.inf
 
 

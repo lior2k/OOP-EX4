@@ -2,10 +2,10 @@ import json
 import math
 from types import SimpleNamespace
 import pygame
-from src.GraphAlgo import GraphAlgo
-from src.agent import Agent
-from src.pokemon import Pokemon
-from src.client import Client
+from GraphAlgo import GraphAlgo
+from agent import Agent
+from pokemon import Pokemon
+from client import Client
 
 EPSILON = 0.01
 
