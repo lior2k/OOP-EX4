@@ -20,7 +20,7 @@ The game is about agents catching as many pokemons as possible, agents are "runn
 | Game | Using all the other classes to execute our algorithm |
 
 ## GUI Example
-![image](https://i.imgur.com/jrQfj8D.png)
+![pokemon](https://user-images.githubusercontent.com/92747945/148688959-e3550506-dc02-4484-bbca-2afef3297a04.gif)
 
 
 ## UML
