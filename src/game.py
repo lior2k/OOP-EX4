@@ -2,9 +2,9 @@ import json
 import math
 from types import SimpleNamespace
 import pygame
-from GraphAlgo import GraphAlgo
-from agent import Agent
-from pokemon import Pokemon
+from src.GraphAlgo import GraphAlgo
+from src.agent import Agent
+from src.pokemon import Pokemon
 from src.client import Client
 
 EPSILON = 0.01
@@ -53,7 +53,7 @@ class Game:
                         agent.get_pokemon_list().remove(p)
                 self.pokemon_list.remove(p)
 
-    def choose_best_agent(self, pokemon: Pokemon):
+    def choose_best_agent(self, pokemon: Pokemon) -> (Agent, float, [int]):
         best_agent = None
         best_cost = math.inf
         best_path = []
@@ -119,11 +119,7 @@ class Game:
                     best_dist = dist2 + dist3
                     best_path = path2
 
-        best_agent.dist = best_dist
-        best_agent.current_path = best_path
-        best_agent.set_state(1)
-        best_agent.add_pokemon(pokemon)
-        pokemon.set_state(1)
+        return best_agent, best_dist, best_path
 
     def on_way(self, pokemon: Pokemon) -> bool:
         src = pokemon.get_src_node().get_id()

@@ -1,12 +1,10 @@
-import itertools
 import json
 import traceback
 from typing import List
 import pygame
 from pygame import gfxdraw
-
-from GraphAlgoInterface import GraphAlgoInterface
-from DiGraph import *
+from src.GraphAlgoInterface import GraphAlgoInterface
+from src.DiGraph import *
 
 Black = (0, 0, 0)
 White = (255, 255, 255)
@@ -270,53 +268,3 @@ class GraphAlgo(GraphAlgoInterface):
         y = (((coordinates[1] - self.graph.min_y) * height_factor) * 0.65) + 100
         return x, y
 
-    # def create_path_dict(self, node_lst: List[int]) -> {}:
-    #     path_dict = {}  # { (node1_id, node2_id) : (path_length, path)
-    #     for node1_id in node_lst:
-    #         for node2_id in node_lst:
-    #             if node1_id == node2_id:
-    #                 path_dict[(node1_id, node2_id)] = (0.0, [])
-    #             else:
-    #                 sp = self.shortest_path(node1_id, node2_id)
-    #                 path_dict[(node1_id, node2_id)] = sp
-    #     return path_dict
-    #
-    # def create_all_list_permutations(self, node_lst: List[int], path_dict: {}) -> {}:
-    #     ret = {}
-    #     for perm in list(itertools.permutations(node_lst)):
-    #         list_to_string = str(perm)
-    #         ret[list_to_string] = self.create_val(node_lst, path_dict)
-    #     return ret
-    #
-    # def create_val(self, lst: List[int], path_dict: {}) -> (float, list):
-    #     ret = []
-    #     length = 0
-    #     for i in range(len(lst)):
-    #         if i + 1 == len(lst):
-    #             break
-    #         src = lst[i]
-    #         dest = lst[i + 1]
-    #         temp_tup = path_dict.get((src, dest))
-    #         for ele in temp_tup[1]:
-    #             if ele not in ret:
-    #                 ret.append(ele)
-    #             else:
-    #                 continue
-    #         length = length + temp_tup[0]
-    #     return length, ret
-    #
-    # def choose_best_path(self, perm_dict: {}) -> (List[int], float):
-    #     min = math.inf
-    #     tup = (float, List[int])
-    #     for perm in perm_dict.values():
-    #         if perm[0] < min:
-    #             min = perm[0]
-    #             tup = perm
-    #     ret = (tup[1], tup[0])
-    #     return ret
-    #
-    # def TSP(self, node_lst: List[int]) -> (List[int], float):
-    #     path_dict = self.create_path_dict(node_lst)  # { (node1_id, node2_id) : (path_length, path)
-    #     permutations_dict = self.create_all_list_permutations(node_lst, path_dict)
-    #     ret = self.choose_best_path(permutations_dict)
-    #     return ret

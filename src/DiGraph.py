@@ -1,8 +1,8 @@
 import math
 import random
 
-from mynode import MyNode
-from GraphInterface import GraphInterface
+from src.mynode import MyNode
+from src.GraphInterface import GraphInterface
 Max_Value = math.inf
 
 
@@ -58,6 +58,9 @@ class DiGraph(GraphInterface):
         self.mc += 1
         self.node_size += 1
         return True
+
+    def add_mynode(self, node: MyNode):
+        self.nodes_dict[node.get_id()] = node
 
     def remove_node(self, node_id: int) -> bool:
         if self.nodes_dict.keys().__contains__(node_id):

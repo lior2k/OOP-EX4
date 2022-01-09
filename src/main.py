@@ -49,7 +49,6 @@ if __name__ == '__main__':
         clock.tick(60)
         gui.load_and_draw(game)
         gui.pygame_loop()
-
         # assign agents to pokemons
         for pokemon in game.pokemon_list:
             if pokemon.get_state() == ON_WAY:
@@ -57,11 +56,15 @@ if __name__ == '__main__':
             elif pokemon.get_state() == INIT:
                 on_way = game.on_way(pokemon)
                 if not on_way:
-                    game.choose_best_agent(pokemon)
+                    agent, dist, path = game.choose_best_agent(pokemon)
+                    agent.dist = dist
+                    agent.current_path = path
+                    agent.add_pokemon(pokemon)
+                    agent.set_state(1)
+                    pokemon.set_state(1)
 
         # send agents
         for agent in game.get_agents():
-            # print(agent.get_id(), agent.get_curr_path(), agent.get_pokemon_list())
             if len(agent.get_curr_path()) > 0 and agent.get_dest_index() == -1:
                 if agent.get_src_index() == agent.current_path[0]:
                     if agent.prev is not None and agent.prev != agent.get_src_index():

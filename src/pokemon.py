@@ -1,4 +1,4 @@
-from mynode import MyNode
+from src.mynode import MyNode
 
 
 class Pokemon:
@@ -46,10 +46,10 @@ class Pokemon:
     #     return f"w: {self.weight}, t: {self.type}, p: {self.pos}, state: {self.state}"
 
     def __str__(self):
-        return f"src index: {self.get_src_node().get_id()}, dest_index: {self.get_dest_node().get_id()}"
+        return f"src index: {self.get_src_node().get_id()}, dest_index: {self.get_dest_node().get_id()}, p: {self.pos}"
 
     def __repr__(self):
-        return f"src index: {self.get_src_node().get_id()}, dest_index: {self.get_dest_node().get_id()}"
+        return f"src index: {self.get_src_node().get_id()}, dest_index: {self.get_dest_node().get_id()}, p: {self.pos}"
 
     def __eq__(self, other):
         if isinstance(other, Pokemon):
